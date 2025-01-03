@@ -1,15 +1,22 @@
 name: test
+
 on:
-  branches: 
-    main
-  pull_requests:
-    main
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
 jobs:
-  runs-on: ubuntu-latest
-  steps:
-    - name: checkout
-      uses: actions/checkout
-    - name: Print issue details
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Print issue details
         run: |
           echo "Issue Title: ${{ github.event.issue.title }}"
           echo "Issue Body: ${{ github.event.issue.body }}"

@@ -1,0 +1,21 @@
+name: focus-user
+on:
+  push:
+    branches:
+      main
+    pull_request:
+      main
+    issuse:
+      typees:
+        - opened
+jobs:
+  runs-on: ubuntu-latest
+  steps:
+    - name: checkout
+      uses: actions/checkout
+    - name: apt g++
+      runs: sudo apt install g++ -y
+    - name: compile
+      runs: g++ -g focus.cpp -o focus -std=c++17
+    - name: run
+      runs:

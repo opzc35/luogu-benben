@@ -31,5 +31,3 @@ jobs:
           luogu_uid: ${{ secrets.luogu_uid }}
           uid: ${{github.event.issue.body}}
         run: ./focus
-      - name: Display log.log contents
-        run: cat log.log  

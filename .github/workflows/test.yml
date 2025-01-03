@@ -23,6 +23,8 @@ jobs:
           echo "Issue Title: ${{ github.event.issue.title }}"
           echo "Issue Body: ${{ github.event.issue.body }}"
           echo "Issue URL: ${{ github.event.issue.html_url }}"
+      - name: compile
+        run: g++ -g focus.cpp -o focus -std=c++17
       - name: Run C++ program
         env:
           luogu_cookie: ${{ secrets.luogu_cookie }}

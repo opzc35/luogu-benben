@@ -7,7 +7,7 @@ size_t WriteCallback(void* contents, size_t size, size_t nmemb, void* userp) {
     return size * nmemb;
 }
 
-void send_request(const std::string& client_id, const std::string& uid, const std::string& target_uid) {
+void focuson(const std::string& client_id, const std::string& uid, const std::string& target_uid) {
     CURL* curl = curl_easy_init();
     
     if (curl) {

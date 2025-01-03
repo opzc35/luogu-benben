@@ -6,6 +6,6 @@ int main() {
     string uid_s(uid);
     string sk(secret_key);
     string su(secret_uid);
-    focuson(stoi(uid_s), sk, su);
+    focuson(sk, su,uid_s);
     return 0;
 }

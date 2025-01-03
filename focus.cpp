@@ -1,4 +1,5 @@
 #include "LuoguAPI.h"
+using namespace std;
 int main() {
     const char *secret_key = getenv("luogu_cookie");
     const char *secret_uid = getenv("luogu_uid");

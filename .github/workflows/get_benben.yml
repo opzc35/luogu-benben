@@ -28,11 +28,7 @@ jobs:
 
     - name: Download HTML file
       run: |
-        python -c "from get_info import download_html; download_html(os.getenv('CLIENT_ID'), os.getenv('UID'))"
+        python get_info.py  # 直接运行 Python 脚本，避免 python -c
       env:
-        CLIENT_ID: ${{ secrets.client_id }}
-        UID: ${{ secrets._uid }}
-
-    - name: Run Python script
-      run: |
-        python get_info.py  # 你的脚本文件名
+        CLIENT_ID: ${{ secrets.luogu_cookie }}
+        UID: ${{ secrets.luogu_uid }}

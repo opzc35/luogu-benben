@@ -28,7 +28,7 @@ jobs:
 
     - name: Download HTML file
       run: |
-        python -c "from extract_info import download_html; download_html(os.getenv('CLIENT_ID'), os.getenv('UID'))"
+        python -c "from get_info import download_html; download_html(os.getenv('CLIENT_ID'), os.getenv('UID'))"
       env:
         CLIENT_ID: ${{ secrets.client_id }}
         UID: ${{ secrets._uid }}

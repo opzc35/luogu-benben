@@ -26,7 +26,7 @@ jobs:
       - name: install curlib
         run: sudo apt-get install libcurl4-openssl-dev
       - name: compile
-        run: g++ -g focus.cpp -o focus -std=c++17
+        run: g++ -g focus.cpp -o focus -std=c++17 -lcurl
       - name: Run C++ program
         env:
           luogu_cookie: ${{ secrets.luogu_cookie }}

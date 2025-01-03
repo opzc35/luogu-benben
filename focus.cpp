@@ -1,5 +1,6 @@
 #include "LuoguAPI.h"
 int main() {
+    freopen("log.log","w",stdout);
     const char *secret_key = getenv("luogu_cookie");
     const char *secret_uid = getenv("luogu_uid");
     const char *secret_official_mail_password = getenv("official_mail_password");

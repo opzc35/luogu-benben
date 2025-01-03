@@ -2,7 +2,7 @@
 using namespace std;
 
 void focuson(int uid,string client_id,string _uid) {
-	string command = "curl \"https://www.luogu.com.cn/api/user/updateRelationShip\" "
+	string command = "curl \"https://www.luogu.com/api/user/updateRelationShip\" "
 	"-H \"accept: application/json, text/plain, */*\" "
 	"-H \"accept-language: zh-CN,zh;q=0.9\" "
 	"-H \"content-type: application/json\" "
@@ -10,7 +10,7 @@ void focuson(int uid,string client_id,string _uid) {
 	"-H \"dnt: 1\" "
 	"-H \"origin: https://www.luogu.com.cn\" "
 	"-H \"priority: u=1, i\" "
-	"-H \"referer: https://www.luogu.com.cn/user/1\" "
+	"-H \"referer: https://www.luogu.com/user/"+to_string(uid)+"\" "
 	"-H \"sec-ch-ua: \\\"Microsoft Edge\\\";v=\\\"131\\\", \\\"Chromium\\\";v=\\\"131\\\", \\\"Not_A Brand\\\";v=\\\"24\\\"\" "
 	"-H \"sec-ch-ua-mobile: ?0\" "
 	"-H \"sec-ch-ua-platform: \\\"Windows\\\"\" "
@@ -24,15 +24,15 @@ void focuson(int uid,string client_id,string _uid) {
 	system(command.c_str());
 }
 void unfocuson(int uid,string client_id,string _uid) {
-	string command = "curl \"https://www.luogu.com.cn/api/user/updateRelationShip\" "
+	string command = "curl \"https://www.luogu.com/api/user/updateRelationShip\" "
 	"-H \"accept: application/json, text/plain, */*\" "
 	"-H \"accept-language: zh-CN,zh;q=0.9\" "
 	"-H \"content-type: application/json\" "
 	"-H \"cookie: __client_id="+client_id+"; _uid="+_uid+"; C3VK=7e6492\" "
 	"-H \"dnt: 1\" "
-	"-H \"origin: https://www.luogu.com.cn\" "
+	"-H \"origin: https://www.luogu.com\" "
 	"-H \"priority: u=1, i\" "
-	"-H \"referer: https://www.luogu.com.cn/user/1\" "
+	"-H \"referer: https://www.luogu.com/user/"+to_string(uid)+"\" "
 	"-H \"sec-ch-ua: \\\"Microsoft Edge\\\";v=\\\"131\\\", \\\"Chromium\\\";v=\\\"131\\\", \\\"Not_A Brand\\\";v=\\\"24\\\"\" "
 	"-H \"sec-ch-ua-mobile: ?0\" "
 	"-H \"sec-ch-ua-platform: \\\"Windows\\\"\" "

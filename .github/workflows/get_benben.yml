@@ -24,8 +24,15 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install beautifulsoup4
+        pip install beautifulsoup4 requests
+
+    - name: Download HTML file
+      run: |
+        python -c "from extract_info import download_html; download_html(os.getenv('CLIENT_ID'), os.getenv('UID'))"
+      env:
+        CLIENT_ID: ${{ secrets.client_id }}
+        UID: ${{ secrets._uid }}
 
     - name: Run Python script
       run: |
-        python get_info.py
+        python extract_info.py  # 你的脚本文件名

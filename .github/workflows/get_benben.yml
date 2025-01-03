@@ -28,7 +28,18 @@ jobs:
 
     - name: Download HTML file
       run: |
-        python get_info.py  # 直接运行 Python 脚本，避免 python -c
+        python extract_info.py  # 直接运行 Python 脚本，下载 HTML 文件
       env:
-        CLIENT_ID: ${{ secrets.luogu_cookie }}
-        UID: ${{ secrets.luogu_uid }}
+        CLIENT_ID: ${{ secrets.client_id }}
+        UID: ${{ secrets._uid }}
+
+    - name: Show HTML content
+      run: |
+        # 检查文件是否存在
+        if [ -f "document.html" ]; then
+          echo "文件内容 (前 1000 字符):"
+          # 输出文件前 1000 字符，防止文件过大
+          head -c 1000 document.html
+        else
+          echo "document.html 文件不存在。"
+        fi

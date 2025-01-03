@@ -16,7 +16,7 @@ def download_html(client_id, _uid, url='https://www.luogu.com.cn/feed/watching?p
     }
 
     cookies = {
-        '__client_id': client_id,
+        'client_id': client_id,
         '_uid': _uid
     }
 
@@ -33,8 +33,8 @@ def download_html(client_id, _uid, url='https://www.luogu.com.cn/feed/watching?p
         print(f"下载 HTML 文件时发生错误: {e}")
 
 # 从环境变量获取 client_id 和 _uid
-client_id = os.getenv('luogu_cookie')  # 从环境变量获取 client_id
-_uid = os.getenv('luogu_uid')  # 从环境变量获取 _uid
+client_id = os.getenv('CLIENT_ID')  # 从环境变量获取 client_id
+_uid = os.getenv('UID')  # 从环境变量获取 _uid
 
 if client_id and _uid:
     # 下载 HTML 文件

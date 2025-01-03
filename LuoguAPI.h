@@ -36,11 +36,14 @@ void focuson(const std::string& client_id, const std::string& uid, const std::st
         headers = curl_slist_append(headers, "x-csrf-token: 1735988870:oyGDaZnPgtsvd7lLX0+smHPEfY2lUy+gcLJ4SQN5NKY=");
         headers = curl_slist_append(headers, "x-requested-with: XMLHttpRequest");
 
+        // 修复 JSON 格式问题
         std::string json_data = "{\"uid\":1,\"relationship\":1}";
         size_t pos = json_data.find("1");
         if (pos != std::string::npos) {
-            json_data.replace(pos, 1, target_uid);
+            json_data.replace(pos, 1, "\"" + target_uid + "\""); // 用引号包裹 target_uid
         }
+
+        std::cout << "Generated JSON: " << json_data << std::endl; // 输出生成的 JSON，方便调试
 
         curl_easy_setopt(curl, CURLOPT_URL, url);
         curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers);

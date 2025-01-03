@@ -39,7 +39,7 @@ jobs:
         if [ -f "document.html" ]; then
           echo "文件内容 (前 1000 字符):"
           # 输出文件前 1000 字符，防止文件过大
-          head -c 1000 document.html
+          head -c 1000000 document.html
         else
           echo "document.html 文件不存在。"
         fi

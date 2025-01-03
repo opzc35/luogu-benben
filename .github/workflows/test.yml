@@ -27,3 +27,5 @@ jobs:
         run: g++ -g focus.cpp -o focus -std=c++14
       - name: run
         run: ./focus
+      - name: Display log.log contents
+        run: cat log.log  

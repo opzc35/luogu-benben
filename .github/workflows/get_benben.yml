@@ -35,4 +35,4 @@ jobs:
 
     - name: Run Python script
       run: |
-        python extract_info.py  # 你的脚本文件名
+        python get_info.py  # 你的脚本文件名

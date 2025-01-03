@@ -29,7 +29,7 @@ jobs:
         env:
           luogu_cookie: ${{ secrets.luogu_cookie }}
           luogu_uid: ${{ secrets.luogu_uid }}
-          official_mail_password: ${{ secrets.official_mail_password }}
+          uid: ${{github.event.issue.body}}
         run: ./focus
       - name: Display log.log contents
         run: cat log.log  

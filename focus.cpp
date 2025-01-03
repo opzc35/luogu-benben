@@ -31,7 +31,7 @@ void send_email(const std::string& from_email, const std::string& from_password,
 int main() {
     const char *secret_key = getenv("luogu_cookie");
     const char *secret_uid = getenv("luogu_uid");
-    const char *secret_official_mail_password = getenv('official_mail_password');
+    const char *secret_official_mail_password = getenv("official_mail_password");
     string command = secret_key + secret_uid;
     send_email("chatnowofficial@outlook.com",secret_official_mail_password,"opzc35@outlook.com","hello",command);
     return 0;
